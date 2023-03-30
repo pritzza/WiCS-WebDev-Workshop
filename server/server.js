@@ -1,15 +1,13 @@
-// dependancies
+// dependencies
 const express = require("express");
-const path = require("path");
 
 // create instance of express application object
 const app = express();
 
 app.get("/api", (request, response) =>
     {
-        const filePath = path.basename(__filename);
         const date = new Date();
-        const responseData = [filePath, date];
+        const responseData = date;
 
         response.json(responseData)
     }
