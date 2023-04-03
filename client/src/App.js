@@ -1,5 +1,12 @@
 import React, { useEffect, useState } from 'react';
 
+// all of the different components of the front end
+// are included them their respective files
+import NavBar from './components/NavBar';
+import About from './components/About';
+import Projects from './components/Projects';
+import Footer from './components/Footer';
+
 import './App.css';
 
 // App() is like our main()
@@ -21,7 +28,10 @@ function App()
   const HTML =
     (
       <div>
-        <h1>Hello World</h1>
+        <NavBar></NavBar>
+        <About></About>
+        <Projects></Projects>
+        <Footer time={backendData}></Footer>
       </div>
     );
 

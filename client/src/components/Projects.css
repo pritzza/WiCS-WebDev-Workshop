@@ -1,0 +1,13 @@
+.projectBox {
+    margin-top: 8px;
+    padding-left: 32px;
+    margin-left: 32px;
+
+    border-color: aliceblue;
+    border-style: solid;
+    border-radius: 16px;
+}
+
+.projectImageBox img {
+    height: 100px;
+}
