@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 // all of the different components of the front end
 // are included them their respective files
@@ -14,7 +14,7 @@ function App()
 
   if (!isFirstLoad)
   {
-    fetch("/api")
+    fetch("http://localhost:8888/api")
       .then(response => response.json())
       .then(data => {setBackendData(data)});
       

@@ -13,7 +13,9 @@ app.use(
     })
 );
 
-app.use("/nonsense", nonsenseRouter);
+app.get("/api", (request, response) => {
+    response.json(10);
+});
 
 const PORT = 8888;
 
