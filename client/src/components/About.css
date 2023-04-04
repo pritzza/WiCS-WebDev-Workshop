@@ -1,5 +1,5 @@
 #aboutSection {
-    background-color: gainsboro;
+    background-image: radial-gradient(red, orange, yellow, green, blue, purple);
     height: 600px;
 }
 
@@ -14,6 +14,15 @@
 
 #aboutImage > img {
     height: 400px;
+    position:absolute;
+}
+
+#aboutImage > img:hover {
+    height: 500px;
+}
+
+img:hover {
+    filter: drop-shadow(16px 16px 20px red) invert(75%);
 }
 
 #aboutDescription {

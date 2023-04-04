@@ -3,6 +3,7 @@ import React from "react";
 import "./About.css"
 
 import Image from "./images/chara_01.jpg"
+import ImageClear from "./images/chara_01.png"
 
 export default function About(){
 
@@ -12,7 +13,7 @@ export default function About(){
     return(
             <div id="aboutSection">
                 <div id="aboutImage">
-                    <img src={Image}/>
+                    <img src={ImageClear}/>
                 </div>
                 <div id="aboutDescription">
                     <h1>Some Text</h1>

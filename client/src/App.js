@@ -19,7 +19,7 @@ function App()
 
   if (!isFirstLoad)
   {
-    fetch("http://localhost:5000/nonsense/rng")
+    fetch("nonsense/rng")
       .then(response => response.json())
       .then(data => {setBackendData(data)});
       

@@ -11,4 +11,10 @@ router.get("/time", (req, res) => {
     res.json(date)
 });
 
+router.post("/secret", (req, res) => {
+    let data = req.body;
+    res.json(data);
+    console.log(req.body.pass);
+});
+
 module.exports = router;

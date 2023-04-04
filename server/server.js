@@ -6,7 +6,16 @@ const cors = require("cors");
 const app = express();
 
 // allows access from other ports
-app.use(cors());
+//use cors to allow cross origin resource sharing
+app.use(
+    cors({
+      origin: 'http://localhost:3000',
+      credentials: true,
+    })
+);
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
 const nonsenseRouter = require("./routes/nonsense")
 app.use("/nonsense", nonsenseRouter);
