@@ -15,15 +15,18 @@ function App()
   // https://react.dev/reference/react/useState
   // [var, setVar] = useState(varInitialValue)
   const [backendData, setBackendData] = useState();
+  const [isFirstLoad, setFirstLoad] = useState(false);
 
-  // https://react.dev/reference/react/useEffect
+  if (!isFirstLoad)
+  {
+    fetch("http://localhost:5000/nonsense/rng")
+      .then(response => response.json())
+      .then(data => {setBackendData(data)});
+      
+    setFirstLoad(true);
+  }
 
-  // this code magically puts the server's response into backendData
-  fetch("/api").then(   // then has bunch of default params, 
-    response => response.json() // response is an object, reassign its values to itself.json()
-  ).then(
-    data => { setBackendData(data) }  // data is set to return of setBackendData(data)?
-  );
+  console.log(backendData);
 
   const HTML =
     (

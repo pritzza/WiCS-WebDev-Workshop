@@ -1,17 +1,15 @@
 // dependencies
 const express = require("express");
+const cors = require("cors");
 
 // create instance of express application object
 const app = express();
 
-app.get("/api", (request, response) =>
-    {
-        const date = new Date();
-        const responseData = date;
+// allows access from other ports
+app.use(cors());
 
-        response.json(responseData)
-    }
-);
+const nonsenseRouter = require("./routes/nonsense")
+app.use("/nonsense", nonsenseRouter);
 
 const PORT = 5000;
 
