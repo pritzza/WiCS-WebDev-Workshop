@@ -34,7 +34,7 @@ function App()
         <NavBar></NavBar>
         <About></About>
         <Projects></Projects>
-        <Footer time={backendData}></Footer>
+        <Footer foo={backendData}></Footer>
       </div>
     );
 
