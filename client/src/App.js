@@ -2,12 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 // all of the different components of the front end
 // are included them their respective files
-import NavBar from './components/NavBar';
-import About from './components/About';
-import Projects from './components/Projects';
-import Footer from './components/Footer';
-
-import './App.css';
+import Home from './components/Home';
 
 // App() is like our main()
 function App() 
@@ -19,7 +14,7 @@ function App()
 
   if (!isFirstLoad)
   {
-    fetch("http://localhost:5000/nonsense/rng")
+    fetch("/api")
       .then(response => response.json())
       .then(data => {setBackendData(data)});
       
@@ -31,10 +26,7 @@ function App()
   const HTML =
     (
       <div>
-        <NavBar></NavBar>
-        <About></About>
-        <Projects></Projects>
-        <Footer foo={backendData}></Footer>
+        <Home></Home>
       </div>
     );
 

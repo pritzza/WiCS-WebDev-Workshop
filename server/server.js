@@ -6,12 +6,16 @@ const cors = require("cors");
 const app = express();
 
 // allows access from other ports
-app.use(cors());
+app.use(
+    cors({
+      origin: 'http://localhost:3000',
+      credentials: true,
+    })
+);
 
-const nonsenseRouter = require("./routes/nonsense")
 app.use("/nonsense", nonsenseRouter);
 
-const PORT = 5000;
+const PORT = 8888;
 
 app.listen(PORT, () =>
     {
