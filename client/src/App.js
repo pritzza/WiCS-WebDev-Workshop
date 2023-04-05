@@ -14,7 +14,7 @@ function App()
 
   if (!isFirstLoad)
   {
-    fetch("http://localhost:8888/api")
+    fetch("http://localhost:8888/getSmiles")
       .then(response => response.json())
       .then(data => {setBackendData(data)});
       

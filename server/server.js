@@ -4,6 +4,7 @@ const cors = require("cors");
 
 // create instance of express application object
 const app = express();
+const bodyParser = require('body-parser');
 
 // allows access from other ports
 app.use(
@@ -13,9 +14,23 @@ app.use(
     })
 );
 
-app.get("/api", (request, response) => {
-    response.json(10);
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: false }))
+
+let smileCount = 0;
+
+app.get("/getSmiles", (request, response) => {
+    response.json(smileCount);
 });
+
+app.post('/postSmile', (req, res) => {
+    let data = req.body.Message;
+
+    if (data === "Clicked!")
+        smileCount++;
+
+    res.json(JSON.stringify(smileCount));
+})
 
 const PORT = 8888;
 
